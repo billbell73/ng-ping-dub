@@ -24,15 +24,15 @@ pingpongControllers.controller('ScorerCtrl', ['$scope', '$routeParams', 'Data',
 	 	}
 
 	}
-]).controller('WelcomeCtrl', ['$scope', '$routeParams', 'Data', '$location',
-	function($scope, $routeParams, Data, $location) {
+]).controller('WelcomeCtrl', ['$scope', '$routeParams', 'Start', '$location',
+	function($scope, $routeParams, Start, $location) {
 
 		$scope.master = {};
  
     $scope.sendNames = function(match) {
-      Data.sendNames({p1_name: match.p1, p2_name: match.p2
-	 		},  function(score){
-	 					$location.path("/1");
+      Start.sendNames({p1_name: match.p1, p2_name: match.p2
+	 		},  function(response){
+	 					$location.path("/" + response.match_id);
 	 				})
     };
  
