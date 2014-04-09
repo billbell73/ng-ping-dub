@@ -9,14 +9,14 @@ pingpongControllers.controller('ScorerCtrl', ['$scope', '$routeParams', 'Data',
 	 	})
 
 	 	$scope.increment = function(number){
-	 		Data.increment({id: $routeParams.id, player_id: number
+	 		Data.increment({id: $routeParams.id, p_number: number
 	 		}, function(score){
 	 			$scope.score = score;
 	 			})
 	 	}
 
 	 	$scope.decrement = function(number){
-	 		Data.decrement({id: $routeParams.id, player_id: number
+	 		Data.decrement({id: $routeParams.id, p_number: number
 	 		},  function(score){
 	 					$scope.score = score;
 	 				}

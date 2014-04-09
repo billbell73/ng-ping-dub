@@ -7,12 +7,12 @@ pingpongServices.factory('Data', ['$resource',
 				{ id: '@id' }, { 
 						increment: { 
 						method: 'PUT', 
-						params: { player_id: '@player_id' }, 
+						params: { p_number: '@p_number' }, 
 						isArray: false 
 						}, 
 						decrement: { 
 						method: 'PUT', 
-						params: { player_id: '@player_id', decrement: true }, 
+						params: { p_number: '@p_number', decrement: true }, 
 						isArray: false 	
 						}
 					
