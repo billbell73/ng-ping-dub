@@ -1,0 +1,9 @@
+<form novalidate class="simple-form">
+		Match type: <input type="radio" ng-model="match.doubles" value="true" />Doubles
+    <input type="radio" ng-model="match.doubles" value="false" />Singles<br />
+    Name of Player 1: <input type="text" ng-model="match.p1" /><br />
+    Name of Player 2: <input type="text" ng-model="match.p2" /><br />
+    
+    <button ng-click="reset()">RESET</button>
+    <button ng-click="sendNames(match)">PLAY GAME</button>
+</form>

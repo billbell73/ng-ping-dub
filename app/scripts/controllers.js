@@ -24,5 +24,24 @@ pingpongControllers.controller('ScorerCtrl', ['$scope', '$routeParams', 'Data',
 	 	}
 
 	}
+]).controller('WelcomeCtrl', ['$scope', '$routeParams', 'Data', '$location',
+	function($scope, $routeParams, Data, $location) {
+
+		$scope.master = {};
+ 
+    $scope.sendNames = function(match) {
+      Data.sendNames({p1_name: match.p1, p2_name: match.p2
+	 		},  function(score){
+	 					$location.path("/1");
+	 				})
+    };
+ 
+    $scope.reset = function() {
+      $scope.user = angular.copy($scope.master);
+    };
+ 
+    $scope.reset();
+
+	}
 ]);
 
