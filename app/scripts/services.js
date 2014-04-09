@@ -7,7 +7,7 @@ pingpongServices.factory('Start', ['$resource',
 				{}, {
 						sendNames: { 
 						method: 'POST', 
-						params: { p1: '@p1_name', p2: '@p2_name' }, 
+						// params: { p1: '@p1_name', p2: '@p2_name' }, 
 						isArray: false 	
 						}
 				}
@@ -20,7 +20,7 @@ pingpongServices.factory('Start', ['$resource',
 				{ id: '@id' }, { 
 						increment: { 
 						method: 'PUT', 
-						params: { p_number: '@p_number' }, 
+						// params: { p_number: '@p_number' }, 
 						isArray: false 
 						}, 
 						decrement: { 
