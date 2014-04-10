@@ -32,9 +32,9 @@ pingpongControllers.controller('ScorerCtrl', ['$scope', '$routeParams', 'Data',
     $scope.sendNames = function(match) {
       Start.sendNames({p1_name: match.p1, 
 			                 p2_name: match.p2,
-			                 best_of: 5,
-			                 p1_first_server: false,
-			                 p1_starts_left: false
+			                 best_of: match.bestOf,
+			                 p1_first_server: match.p1StartsLeft,
+			                 p1_starts_left: match.p1StartsServing
 	 		},  function(response){
 	 					$location.path("/" + response.match_id);
 	 				})

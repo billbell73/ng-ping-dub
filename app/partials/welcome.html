@@ -1,8 +1,14 @@
 <form novalidate class="simple-form">
-		Match type: <input type="radio" ng-model="match.doubles" value="true" />Doubles
-    <input type="radio" ng-model="match.doubles" value="false" />Singles<br />
+	<!-- 	Match type: <input type="radio" ng-model="match.doubles" value="true" />Doubles
+    <input type="radio" ng-model="match.doubles" value="false" />Singles<br /> -->
     Name of Player 1: <input type="text" ng-model="match.p1" /><br />
     Name of Player 2: <input type="text" ng-model="match.p2" /><br />
+		Best of: <input type="radio" ng-model="match.bestOf" value=3 />3 games
+    <input type="radio" ng-model="match.bestOf" value=5 />5 games<br />
+    Player 1 starts: <input type="radio" ng-model="match.p1StartsLeft" value=true />on left
+    <input type="radio" ng-model="match.p1StartsLeft" value=false />on right<br />
+    Player 1 starts as: <input type="radio" ng-model="match.p1StartsServing" value=true />server
+    <input type="radio" ng-model="match.p1StartsServing" value=false />receiver<br />
     
     <button ng-click="reset()">RESET</button>
     <button ng-click="sendNames(match)">PLAY GAME</button>
