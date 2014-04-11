@@ -1,15 +1,101 @@
 <form novalidate class="simple-form">
-	<!-- 	Match type: <input type="radio" ng-model="match.doubles" value="true" />Doubles
-    <input type="radio" ng-model="match.doubles" value="false" />Singles<br /> -->
+	
+  Match type: <input type="radio" ng-model="match.doubles" value=true />Doubles
+              <input type="radio" ng-model="match.doubles" value=false />Singles<br />
+
+  Best of: <input type="radio" ng-model="match.bestOf" value=3 />3 games
+           <input type="radio" ng-model="match.bestOf" value=5 />5 games<br />
+
+   <div ng-show="match.doubles === 'false'"> 
+    
     Name of Player 1: <input type="text" ng-model="match.p1" /><br />
     Name of Player 2: <input type="text" ng-model="match.p2" /><br />
-		Best of: <input type="radio" ng-model="match.bestOf" value=3 />3 games
-    <input type="radio" ng-model="match.bestOf" value=5 />5 games<br />
-    Player 1 starts: <input type="radio" ng-model="match.p1StartsLeft" value=true />on left
-    <input type="radio" ng-model="match.p1StartsLeft" value=false />on right<br />
-    Player 1 starts as: <input type="radio" ng-model="match.p1StartsServing" value=true />server
-    <input type="radio" ng-model="match.p1StartsServing" value=false />receiver<br />
+
+    <div ng-show="match.p1"> 
+
+      {{match.p1}} starts as: <input type="radio" 
+                                     ng-model="match.p1StartsServing" 
+                                     value=true />server
+                              <input type="radio" 
+                                     ng-model="match.p1StartsServing" 
+                                     value=false />receiver<br />
+    </div>
+
+    <div ng-show="match.p2"> 
+            
+      {{match.p2}} starts: <input type="radio" 
+                                  ng-model="match.p1StartsLeft" 
+                                  value=false />on left
+                           <input type="radio" 
+                                  ng-model="match.p1StartsLeft" 
+                                  value=true />on right<br />     
+    </div>
+
+  </div>
     
-    <button ng-click="reset()">RESET</button>
-    <button ng-click="sendNames(match)">PLAY GAME</button>
+  <div ng-show="match.doubles"> 
+    Pair 1: <br />
+    Name of first partner: <input type="text" ng-model="match.partnerA" /><br />
+    Name of second partner: <input type="text" ng-model="match.partnerB" /><br />
+
+    Pair 2: <br />
+    Name of first partner: <input type="text" ng-model="match.partnerC" /><br />
+    Name of second partner: <input type="text" ng-model="match.partnerD" /><br />
+
+    Pair 1 starts: <input type="radio" 
+                          ng-model="match.p1StartsServing" 
+                          value=true />serving
+                   <input type="radio" 
+                          ng-model="match.p1StartsServing" 
+                          value=false />receiving<br />
+
+    Pair 2 starts: <input type="radio" 
+                          ng-model="match.p1StartsLeft" 
+                          value=false />on left
+                   <input type="radio" 
+                          ng-model="match.p1StartsLeft" 
+                          value=true />on right<br /> 
+
+    <div ng-show="match.p1StartsLeft != null">
+
+      <div ng-show="match.p1StartsServing">
+  
+         First to serve  <input type="radio" 
+                                ng-model="match.initialServerFirstPartner" 
+                                value=true />{{match.partnerA}}
+                         <input type="radio" 
+                                ng-model="match.initialServerFirstPartner" 
+                                value=false />{{match.partnerB}} <br />
+
+        First to receive  <input type="radio" 
+                                ng-model="match.initialReceiverFirstPartner" 
+                                value=true />{{match.partnerC}}
+                         <input type="radio" 
+                                ng-model="match.initialReceiverFirstPartner" 
+                                value=false />{{match.partnerD}} <br />
+        
+      </div>
+
+      <div ng-show="match.p1StartsServing ==='false'">
+  
+         First to serve  <input type="radio" 
+                                ng-model="match.initialServerFirstPartner" 
+                                value=true />{{match.partnerC}}
+                         <input type="radio" 
+                                ng-model="match.initialServerFirstPartner" 
+                                value=false />{{match.partnerD}} <br />
+
+        First to receive  <input type="radio" 
+                                ng-model="match.initialReceiverFirstPartner" 
+                                value=true />{{match.partnerA}}
+                         <input type="radio" 
+                                ng-model="match.initialReceiverFirstPartner" 
+                                value=false />{{match.partnerB}} <br />
+        
+      </div>
+    </div>
+  </div>
+ </div>
+    
+  <button ng-click="sendNames(match)">PLAY GAME</button>
 </form>
