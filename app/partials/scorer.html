@@ -1,8 +1,10 @@
 	<div id="container" class="match" ng-class="{ flipped: !score.isP1Left }">
+	<div ng-show='score.matchWinner'> {{score.matchWinner}} is the winner! </div>
+	<div ng-show='score.gameJustWonBy'> {{score.gameJustWonBy}} wins game! </div>
 
 		  <section class="player1">
 		    <h2 id="p1-name">
-		    	Player 1
+		    	{{score.p1name}}
 		    </h2>
 		    <article id="p1-points" ng-click="increment(1)" ng-cloak>
 		    	{{score.p1points}}
@@ -21,7 +23,7 @@
 
 		  <section class="player2">
 		    <h2 id="p2-name">
-		    	Player 2
+		    	{{score.p2name}}
 		    </h2>
 		    <article id="p2-points" ng-click="increment(2)">
 		    	{{score.p2points}}
