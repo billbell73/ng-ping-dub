@@ -23,6 +23,14 @@ pingpongControllers.controller('ScorerCtrl', ['$scope', '$routeParams', 'Data',
 	 		)
 	 	}
 
+	 	$scope.sendNextServer = function(firstServer){
+	 		Data.sendNextServer({id: $routeParams.id, nextServer: firstServer
+	 		},  function(score){
+	 					$scope.score = score;
+	 				}
+	 		)
+	 	}
+
 	}
 ]).controller('WelcomeCtrl', ['$scope', '$routeParams', 'Start', '$location',
 	function($scope, $routeParams, Start, $location) {

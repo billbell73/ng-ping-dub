@@ -2,10 +2,23 @@
 	<div ng-show='score.matchWinner'> {{score.matchWinner}} is the winner! </div>
 	<div ng-show='score.gameJustWonBy'> {{score.gameJustWonBy}} wins game! </div>
 
-		  <section class="player1">
-		    <h2 id="p1-name">
-		    	{{score.p1name}}
-		    </h2>
+	<form novalidate class="simple-form" ng-show="score.nextServerAId">
+
+		 First to serve  <input type="radio" 
+                                ng-model="nextGame.firstServer" 
+                                value={{score.nextServerAId}} />{{score.nextServerAName}}
+                         <input type="radio" 
+                                ng-model="nextGame.firstServer" 
+                                value="{{score.nextServerBId}}" />{{score.nextServerBName}} <br />
+
+  <button ng-click="sendNextServer(nextGame.firstServer)">SUBMITO</button>                              
+  </form>
+
+
+
+
+
+
 		    <article id="p1-points" ng-click="increment(1)" ng-cloak>
 		    	{{score.p1points}}
 		    </article>

@@ -27,7 +27,12 @@ pingpongServices.factory('Start', ['$resource',
 						method: 'PUT', 
 						params: { p_number: '@p_number', decrement: true }, 
 						isArray: false 	
-						}					
+						}, 
+						sendNextServer: { 
+						method: 'PUT', 
+						// params: { p_number: '@p_number', decrement: true }, 
+						isArray: false 	
+						}				
 				}
     	)
     }
