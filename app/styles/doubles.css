@@ -1,0 +1,29 @@
+.servemarker {
+	height: 65px;
+}
+
+#p1-servemarker {
+  display: inline-block;
+  position: relative;
+  bottom: -15px;
+  left: -50px;
+}
+
+.flipped #p1-servemarker {
+	bottom: 60px;
+}
+
+#p1-up-first {
+  display: inline-block;
+  position: relative;
+  left: -40px;
+}
+
+.flipped #p1-up-first {
+	bottom: 75px;
+}
+
+.flipped #p1-up-second {
+	position: relative;
+	top: 75px;
+}
