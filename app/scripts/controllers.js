@@ -40,7 +40,15 @@ pingpongControllers.controller('ScorerCtrl', ['$scope', '$routeParams', 'Data',
 			                 p2_name: match.p2,
 			                 best_of: match.bestOf,
 			                 p1_first_server: match.p1StartsLeft,
-			                 p1_starts_left: match.p1StartsServing
+			                 p1_starts_left: match.p1StartsServing,
+			                 partner_a_name: match.partnerA,
+			                 partner_b_name: match.partnerB,
+			                 partner_c_name: match.partnerC,
+			                 partner_d_name: match.partnerD,
+			                 initial_server_first_partner: match.initialServerFirstPartner,
+			                 initial_receiver_first_partner: match.initialReceiverFirstPartner,
+			                 doubles_match: match.doubles
+
 	 		},  function(response){
 	 					$location.path("/" + response.match_id);
 	 				})
