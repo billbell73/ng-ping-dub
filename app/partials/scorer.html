@@ -19,14 +19,43 @@
 
 
 
+
+
+
+
+		  <section class="player1">
+
+		    <h2 id="p1-name" ng-show="!score.doubles">
+		    	{{score.p1name}}
+		    </h2>
+
+		    <h3 id="p1-name" ng-show="score.doubles">
+		    	<div id="p1-up-second">
+		    		{{score.p1PartnerUpSecond}} 
+		    	</div>
+
+					<div id="p1-servemarker">
+			    	<img class="servemarker" ng-show="score.isP1Serving" src="images/server.svg">
+			    	<img class="servemarker" ng-show="!score.isP1Serving" src="images/receiver.svg">
+		    	</div>
+
+		    	<div id="p1-up-first">
+		    	{{score.p1PartnerUpFirst}}
+		    	</div>
+
+		    </h3>
+
+
+
 		    <article id="p1-points" ng-click="increment(1)" ng-cloak>
 		    	{{score.p1points}}
 		    </article>
 		    <aside id="p1-games">
 		    	{{score.p1games}}
 		    </aside>
-				<serveball1></serveball1>
-			
+				<div ng-hide="score.doubles" >
+					<serveball pairNumber="1" ng-show="score.isP1Serving"></serveball>
+				</div>
 
 				
 
@@ -35,16 +64,29 @@
 		  </section>
 
 		  <section class="player2">
-		    <h2 id="p2-name">
+		    
+		    <h2 id="p2-name" ng-show="!score.doubles">
 		    	{{score.p2name}}
 		    </h2>
+
+				<h3 id="p2-name" ng-show="score.doubles">
+		    	{{score.p2PartnerUpFirst}} 
+		    	<img ng-show="score.isP1Serving" src="images/receiver.svg" height=65px>
+		    	<img ng-show="!score.isP1Serving" src="images/server.svg" height=65px>
+
+		    	<br />
+		    	{{score.p2PartnerUpSecond}}
+		    </h3>
+
 		    <article id="p2-points" ng-click="increment(2)">
 		    	{{score.p2points}}
 		    </article>
 		    <aside id="p2-games">
 		    	{{score.p2games}}
 		    </aside>
-		    <serveball2></serveball2>
+		    <div ng-hide="score.doubles" >
+		      <serveball pairNumber="2" ng-show="!score.isP1Serving"></serveball>
+		  	</div>
 		    <nav class="p2-back" ng-click="decrement(2)">Back</nav>
 		  </section>
 
